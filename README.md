@@ -1,4 +1,4 @@
-# Project corpus
+# Sorkandu
   Corpus is a collection of words, tagged or annotated with their grammar components.
 
   We can use the text corpus to do the linguistic researches and projects.
