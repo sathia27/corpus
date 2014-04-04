@@ -13,8 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  database: "<%=ENV['CORPUS_DB']%>"
+  username: "<%=ENV['CORPUS_DB_USER']%>"
+  password: "<%=ENV['CORPUS_DB_PASSWORD']%>"
+  host:     <%=ENV['CORPUS_DB_HOST']%>
   socket: /tmp/mysql.sock
 
 development:
