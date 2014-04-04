@@ -37,9 +37,12 @@
 
 ## Contributing
  To keep corpus* improving we need all help we can get. Whether you can contribute code, ideas, translations, bug reports or simply extend the community as a helpful user, your help is welcome!
+ Pull requests are always welcome. If you are creating new feature please open an issue before submitting a pull request or mark issue in commit.
   If you have any query, pleae contact.
   * Shrinivasan.T tshrinivasan@gmail.com
   * Sathianarayanan.S sathia2704@gmail.com
+  
+
 
 ## License
   This project is licensed under GPL V3
