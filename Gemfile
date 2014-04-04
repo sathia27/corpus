@@ -5,6 +5,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0.rc2'
 # Use mysql as the database for Active Record
 gem 'mysql2'
+gem 'slim'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 # Use Uglifier as compressor for JavaScript assets
