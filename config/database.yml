@@ -13,7 +13,6 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: "<%=ENV['CORPUS_DB']%>"
   username: "<%=ENV['CORPUS_DB_USER']%>"
   password: "<%=ENV['CORPUS_DB_PASSWORD']%>"
   host:     <%=ENV['CORPUS_DB_HOST']%>
@@ -21,7 +20,7 @@ default: &default
 
 development:
   <<: *default
-  database: corpus_development
+  database: "<%=ENV['CORPUS_DB']%>"
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

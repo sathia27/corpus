@@ -1,17 +1,29 @@
 == README
 
-Things you may want to cover:
 
-* Ruby version
+# Project corpus
 
-Ruby 2.1.1
+## System Dependencies
+  * Linux / other unix / OSX 
+  * Ruby 2.1
+  * Rails 4
+  * mysql 2
 
-* System dependencies
+## How to run
+```bash
+  git clone git@github.com:sathia27/corpus.git
+  cd corpus
+  bundle install
+  export CORPUS_DB=corpus_development
+  export CORPUS_DB_USER=<YOUR MYSQL USERNAME>
+  export CORPUS_DB_PASSWORD=<YOUR MYSQL PASSWORD>
+```
 
-Mysql
+## Test url
+  http://corpus-sathia.rhcloud.com/
+
+## Contribute
+ To keep corpus* improving we need all help we can get. Whether you can contribute code, ideas, translations, bug reports or simply extend the community as a helpful user, your help is welcome!
 
 
-* Contribute
-
-To keep corpus* improving we need all help we can get. Whether you can contribute code, ideas, translations, bug reports or simply extend the community as a helpful user, your help is welcome!
 
