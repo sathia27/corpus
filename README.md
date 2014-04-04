@@ -22,11 +22,13 @@
   * Rails 4
   * mysql 2
 
-## How to run
+## Initiate app
 ```bash
   git clone git@github.com:sathia27/corpus.git
   cd corpus
   bundle install
+  rake db:create
+  rake db:migrate
   export CORPUS_DB=corpus_development
   export CORPUS_DB_USER=<YOUR MYSQL USERNAME>
   export CORPUS_DB_PASSWORD=<YOUR MYSQL PASSWORD>
