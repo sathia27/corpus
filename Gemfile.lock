@@ -1,3 +1,21 @@
+GIT
+  remote: git://github.com/activerecord-hackery/polyamorous.git
+  revision: 3d45f4c9219b5e6626096d38aa04f401b7ce7808
+  specs:
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
+
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: d51c78f9071f291b0707ed32093e191f4d8d3b26
+  branch: rails-4.1
+  specs:
+    ransack (1.1.0)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -144,7 +162,9 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2
+  polyamorous!
   rails (= 4.1.0.rc2)
+  ransack!
   rspec-rails
   sass-rails (~> 4.0.2)
   sdoc (~> 0.4.0)
