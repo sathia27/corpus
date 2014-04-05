@@ -1,7 +1,7 @@
 class Admin::WordDocumentsController <  Admin::BaseController
 
   def index
-    @word_documents = WordDocument.where(processed: false).all
+    @word_documents = WordDocument.all
     respond_to do |format|
       format.html { render action: 'index' }
       format.json { render json: @word_documents.to_json }
@@ -36,10 +36,12 @@ class Admin::WordDocumentsController <  Admin::BaseController
   end
 
   def destroy
+    @word_document = WordDocument.find(params[:id])
+    @word_document.destroy
+    redirect_to admin_word_documents_path
   end
-  
+
   def show
-    
   end
 
   def word_document_update

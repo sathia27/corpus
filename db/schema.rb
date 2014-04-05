@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405122230) do
+ActiveRecord::Schema.define(version: 20140405163333) do
 
   create_table "word_documents", force: true do |t|
     t.string   "word_list_file"
@@ -30,5 +30,7 @@ ActiveRecord::Schema.define(version: 20140405122230) do
     t.datetime "modified_at"
     t.datetime "updated_at"
   end
+
+  add_index "words", ["name"], name: "index_words_on_name", using: :btree
 
 end
