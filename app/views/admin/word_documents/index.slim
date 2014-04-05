@@ -14,4 +14,4 @@ table.table.table-striped
         td 
         td = word_file.created_at.strftime("%d %b %Y %l:%M %p")
         //td = button_to "Process", admin_word_document_url(word_file, :word_document => {:processed => true}), :method => :patch, :class => "btn btn-small btn-success"
-        td = button_to "Destroy", admin_word_document_url(word_file, :word_document => {:processed => true}), :method => :delete, :class => "btn btn-small btn-success"
+        td = button_to "Destroy", admin_word_document_url(word_file), :method => :delete, :class => "btn btn-small btn-success"

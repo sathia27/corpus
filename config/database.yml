@@ -11,16 +11,16 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8
   pool: 5
   username: "<%=ENV['CORPUS_DB_USER']%>"
   password: "<%=ENV['CORPUS_DB_PASSWORD']%>"
   host:     <%=ENV['CORPUS_DB_HOST']%>
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
+  encoding: utf8
   database: "<%=ENV['CORPUS_DB']%>"
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
