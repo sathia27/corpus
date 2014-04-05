@@ -1,7 +1,7 @@
 class Admin::WordDocumentsController <  Admin::BaseController
 
   def index
-    @word_documents = WordDocument.all
+    @word_documents = WordDocument.page(params[:page]).per(7)
     respond_to do |format|
       format.html { render action: 'index' }
       format.json { render json: @word_documents.to_json }

@@ -24,3 +24,7 @@ en:
     name: "Sorkandu"
   home:
     title: "Coming soon"
+  navbar:
+    home: "Home"
+    words: "Work"
+    word_document: "Uploaded files"

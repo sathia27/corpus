@@ -11,6 +11,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 gem "carrierwave"
+gem 'kaminari'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 # Use Uglifier as compressor for JavaScript assets

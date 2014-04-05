@@ -13,4 +13,4 @@ table.table.table-striped
         td 
         td = word.created_at.strftime("%d %b %Y %l:%M %p")
         td = button_to "Destroy", admin_word_url(word), :method => :delete, :class => "btn btn-small btn-success"
-
+= paginate @words
