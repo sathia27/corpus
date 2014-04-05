@@ -8,9 +8,9 @@ gem 'mysql2'
 gem 'slim'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails'
 end
-
+gem "carrierwave"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 # Use Uglifier as compressor for JavaScript assets

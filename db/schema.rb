@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403180129) do
+ActiveRecord::Schema.define(version: 20140405122230) do
+
+  create_table "word_documents", force: true do |t|
+    t.string   "word_list_file"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "processed",      default: false
+  end
+
+  add_index "word_documents", ["processed"], name: "index_word_documents_on_processed", using: :btree
 
   create_table "words", force: true do |t|
     t.string   "name"

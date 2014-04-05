@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :words
   namespace :admin do
     resources :words
+    resources :word_documents
   end
 
   # Example of regular route:

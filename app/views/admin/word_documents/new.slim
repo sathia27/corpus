@@ -1,0 +1,10 @@
+h3 Upload word document
+= form_for @word_document, :html =>  {:multipart => true, :role => "form"}, :url => admin_word_documents_path  do |f|
+  - @word_document.errors.full_messages.each do |msg|
+    .alert.alert-danger
+      p = msg
+  = f.hidden_field :user_id
+  div.form-group
+    label
+    = f.file_field :word_list_file
+  = f.submit "Upload", :class => "btn btn-default"
