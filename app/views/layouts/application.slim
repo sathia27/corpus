@@ -13,10 +13,16 @@ html
     .navbar.navbar-inverse.navbar-fixed-top role="navigation"
       .container
         .navbar-header
-        a.navbar-brand = t('project.name')
-    .collapse.navbar-collapse
+          a.navbar-brand = t('project.name')
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            - if current_user
+              li
+              = button_to t("navbar.logout"), destroy_user_session_path(current_user), method: :delete, :class => "btn btn-link nav-link"
     .container
-      p.notice = notice
-      p.alert = alert
+      - if notice or alert
+        .alert.alert-danger
+          p = notice
+          p = alert
       == yield
 

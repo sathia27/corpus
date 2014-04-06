@@ -22,6 +22,11 @@ html
               = link_to t('navbar.word_document'), admin_word_documents_path
             li
               = link_to t('navbar.words'), admin_words_path
+            li
+              = link_to t('navbar.users'), admin_users_path
+            - if current_user
+              li
+                = button_to t("navbar.logout"), destroy_user_session_path, method: :delete, :class => "btn btn-link nav-link"
     .container
       == yield
 

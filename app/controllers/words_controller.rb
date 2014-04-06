@@ -1,5 +1,8 @@
 class WordsController < ApplicationController
-  def index
-    render :json => Word.all.to_json
+  def random
+    @word = Word.limit(1).order("RAND()").first
+    respond_to do |format|
+      format.html { render action: 'random' }
+    end
   end
 end

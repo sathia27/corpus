@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:omniauth_callbacks => "omni_auth"}
-  
-  root 'home#index'
+ 
+  root 'words#random'
   resources :words
   namespace :admin do
     resources :words
