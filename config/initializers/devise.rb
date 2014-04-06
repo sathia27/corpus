@@ -79,7 +79,11 @@ Devise.setup do |config|
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
-  config.omniauth :facebook, "120343811381254", "497ec53d7eebc3179464318d6179f23d", {:scope => 'email, offline_access'}
+  if Rails.env == 'development'
+    config.omniauth :facebook, "120343811381254", "497ec53d7eebc3179464318d6179f23d", {:scope => 'email, offline_access'}
+  elsif Rails.env == 'production'
+    config.omniauth :facebook, "733285336705837", "61ffb50315a418096dbd104e27aa74e0", {:scope => 'email, offline_access'}
+  end
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX

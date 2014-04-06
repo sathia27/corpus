@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
     protected
     def confirmation_required?
-      true if provider.blank? || uid.blank?
+      false
+      #true if provider.blank? || uid.blank?
     end
 end
