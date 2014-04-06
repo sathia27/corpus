@@ -16,9 +16,19 @@ html
           a.navbar-brand = t('project.name')
         .collapse.navbar-collapse
           ul.nav.navbar-nav
-            - if current_user
+            - if current_user and current_user.admin?
               li
-              = button_to t("navbar.logout"), destroy_user_session_path(current_user), method: :delete, :class => "btn btn-link nav-link"
+                = link_to t('navbar.home'), "/"
+              li
+                = link_to t('navbar.word_document'), admin_word_documents_path
+              li
+                = link_to t('navbar.words'), admin_words_path
+              li
+                = link_to t('navbar.users'), admin_users_path
+            - if current_user
+                li
+                  = button_to t("navbar.logout"), destroy_user_session_path, method: :delete, :class => "btn btn-link nav-link"
+
     .container
       - if notice or alert
         .alert.alert-danger
