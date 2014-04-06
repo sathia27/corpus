@@ -24,9 +24,11 @@ en:
     name: "Sorkandu"
   home:
     title: "Coming soon"
+  word:
+    choose_word: "Choose the correct Part of speech for highlighted word and click 'Next'"
   navbar:
     home: "Home"
-    words: "Work"
+    words: "Words"
     word_document: "Uploaded files"
     users: "Users"
     logout: "Logout"
