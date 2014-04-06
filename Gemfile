@@ -15,6 +15,8 @@ gem 'kaminari'
 
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4.1"
 gem "polyamorous", github: "activerecord-hackery/polyamorous"
+gem 'devise'
+gem 'omniauth-facebook'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

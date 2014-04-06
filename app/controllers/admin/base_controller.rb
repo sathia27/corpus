@@ -2,6 +2,8 @@ class Admin::BaseController < ApplicationController
   before_filter :authenticate_admin
   layout "admin"
   def authenticate_admin
-    #redirect_to words_path
+    unless current_user.admin?
+      redirect_to root_path
+    end
   end
 end

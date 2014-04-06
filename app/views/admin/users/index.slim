@@ -1,0 +1,20 @@
+h3 Users
+
+= search_form_for @q, :url => admin_users_path do |f|
+  = f.text_field :email_cont, :class => "form-control", :placeholder => "Search for word"
+
+table.table.table-striped
+  thead
+    tr
+      th email
+      th created at
+      th Admin
+      th 
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.email
+        td = user.created_at.strftime("%d %b %Y %l:%M %p")
+        td = (user.admin? ? "Yes" : "No")
+        td = user.admin ? (button_to "Remove admin permission", admin_user_path(user, {user: {admin: false}}), method: :patch, :class => "btn btn-small") : (button_to "Make admin", admin_user_url(user, {user: {admin: true}}), method: :patch, :class => "btn btn-small")
+= paginate @users
