@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:omniauth_callbacks => "omni_auth"}
  
   root 'words#random'
+  get '/review' => "words#review"
   resources :words
   namespace :admin do
     resources :words
     resources :users
     resources :word_documents
+    resources :tags
   end
 
   # Example of regular route:

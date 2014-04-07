@@ -7,6 +7,7 @@ table.table.table-striped
   thead
     tr
       th name 
+      th tag
       th user
       th created at
       th
@@ -14,7 +15,8 @@ table.table.table-striped
     - @words.each do |word|
       tr
         td = word.name
-        td 
+        td = word.tag.name if word.tag
+        td = word.user.email
         td = word.created_at.strftime("%d %b %Y %l:%M %p")
         td = button_to "Destroy", admin_word_url(word), :method => :delete, :class => "btn btn-small btn-success"
 = paginate @words

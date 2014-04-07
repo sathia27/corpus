@@ -1,4 +1,14 @@
 .more-padding
   h3 = t("word.choose_word")
   h2 = @word.name
-  = link_to "Next word", root_path, :class => "btn btn-success"
+  hr
+  = form_for @word, :html => {:role => "form", :url => word_path(@word.id), :method => :put}  do |f|
+    - @tags.each do |tag|
+      div.radio
+        label
+         = f.radio_button :tag_id, tag.id
+         = tag.name
+    hr
+    div.center-aligned
+      = link_to "Skip", root_path, :class => "btn btn-danger"
+      = f.submit "Save", :class => "btn btn-success"

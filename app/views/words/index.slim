@@ -1,0 +1,13 @@
+.more-padding
+  h3 = t("navbar.words")
+  h5 = "Total words (" + @words.count.to_s + ")"
+  table.table
+    thead
+      tr
+        th Word
+        th Tag
+    tbody
+      - @words.each do |word|
+        tr
+          td = word.name
+          td = word.tag.name

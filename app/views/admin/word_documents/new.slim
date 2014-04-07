@@ -3,7 +3,7 @@ h3 Upload word document
   - @word_document.errors.full_messages.each do |msg|
     .alert.alert-danger
       p = msg
-  = f.hidden_field :user_id
+  = f.hidden_field :user_id, :value => current_user.id
   div.form-group
     label
     = f.file_field :word_list_file

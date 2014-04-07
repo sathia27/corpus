@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, :confirmable, :omniauthable
+  has_many :words
 
     def self.find_for_oauth(auth)
       record = where(provider: auth.provider, uid: auth.uid.to_s).first

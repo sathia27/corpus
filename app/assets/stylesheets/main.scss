@@ -24,5 +24,24 @@ h3.center{
 }
 .more-padding{
   padding: 40px 15px;
+  h3,h2,h5{
+    text-align: center;
+  }
+  .radio{
+    width: 250px;
+    margin: 10px auto;
+    text-align: center;
+  }
+  .center-aligned{
+    text-align: center;
+    a,input{
+      margin: 0 10px;
+    }
+  }
+}
+.padding15{
+  margin-top: 20px;
+  padding: 15px;
   text-align: center;
+  font-weight: bold;
 }

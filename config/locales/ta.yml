@@ -1,0 +1,13 @@
+ta:
+  project:
+    name: "சொர்க்கந்டு"
+  home:
+    title: "Coming soon"
+  word:
+    choose_word: "Choose the correct Part of speech for highlighted word and click 'Next'"
+  navbar:
+    home: "Home"
+    words: "வார்த்தைகள்"
+    word_document: "வார்த்தை ஆவணங்கள்"
+    users: "பயனர்கள்"
+    logout: "விடு பதிகை"

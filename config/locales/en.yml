@@ -26,9 +26,13 @@ en:
     title: "Coming soon"
   word:
     choose_word: "Choose the correct Part of speech for highlighted word and click 'Next'"
+    review_word: "Found a mistake ? Choose correct one."
   navbar:
     home: "Home"
-    words: "Words"
-    word_document: "Uploaded files"
-    users: "Users"
+    tags: "Admin - Add tags"
+    words: "Admin - Words"
+    tag_words: "Tag Word"
+    review_words: "Review words"
+    word_document: "Admin - word files"
+    users: "Admin - Users"
     logout: "Logout"

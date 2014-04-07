@@ -25,9 +25,15 @@ html
               li
                 = link_to t('navbar.home'), "/"
               li
-                = link_to t('navbar.word_document'), admin_word_documents_path
+                = link_to t('navbar.review_words'), review_path
+              li
+                = link_to t('navbar.tag_words'), words_path
               li
                 = link_to t('navbar.words'), admin_words_path
+              li
+                = link_to t('navbar.word_document'), admin_word_documents_path
+              li
+                = link_to t('navbar.tags'), admin_tags_path
               li
                 = link_to t('navbar.users'), admin_users_path
             - if current_user

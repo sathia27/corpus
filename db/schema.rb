@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406090105) do
+ActiveRecord::Schema.define(version: 20140407083021) do
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -50,8 +56,12 @@ ActiveRecord::Schema.define(version: 20140406090105) do
     t.datetime "created_at"
     t.datetime "modified_at"
     t.datetime "updated_at"
+    t.integer  "tag_id"
+    t.integer  "tag_created_by"
   end
 
   add_index "words", ["name"], name: "index_words_on_name", using: :btree
+  add_index "words", ["tag_created_by"], name: "index_words_on_tag_created_by", using: :btree
+  add_index "words", ["tag_id"], name: "index_words_on_tag_id", using: :btree
 
 end
