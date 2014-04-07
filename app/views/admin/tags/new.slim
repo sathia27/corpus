@@ -1,0 +1,9 @@
+h3 = t("navbar.tags")
+= form_for @tag, :html =>  {:multipart => true, :role => "form"}, :url => admin_tags_path  do |f|
+  - @tag.errors.full_messages.each do |msg|
+    .alert.alert-danger
+      p = msg
+  div.form-group
+    label
+    = f.text_field :name, :class => "form-control", :placeholder => "Enter tag"
+  = f.submit "Save", :class => "btn btn-default"

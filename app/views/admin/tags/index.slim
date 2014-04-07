@@ -1,0 +1,15 @@
+h3 = t("navbar.tags")
+= link_to "New", new_admin_tag_path, :class => "btn btn-primary"
+table.table.table-striped
+  thead
+    tr
+      th = t("tag.label.name")
+      th created_at
+      th
+  tbody
+    - @tags.each do |tag|
+      tr
+        td = tag.name
+        td = tag.created_at.strftime("%d %b %Y %l:%M %p") if tag.created_at
+        td = button_to "Destroy", admin_tag_url(tag), :method => :delete, :class => "btn btn-small btn-success"
+= paginate @tags
