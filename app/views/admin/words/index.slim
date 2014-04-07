@@ -6,7 +6,7 @@ h3 Word list
 table.table.table-striped
   thead
     tr
-      th name 
+      th name
       th tag
       th user
       th created at
@@ -16,7 +16,7 @@ table.table.table-striped
       tr
         td = word.name
         td = word.tag.name if word.tag
-        td = word.user.email
+        td = word.user.email if word.user
         td = word.created_at.strftime("%d %b %Y %l:%M %p")
         td = button_to "Destroy", admin_word_url(word), :method => :delete, :class => "btn btn-small btn-success"
 = paginate @words
