@@ -19,9 +19,12 @@
     <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %>
   <% end -%>
 
-  <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %>
+  <div class="social_login">
+    <p>Sign in with</p>
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to "#{provider.to_s.titleize.sub(" Oauth2", "")}", omniauth_authorize_path(resource_name, provider), :class => provider %>
+      <% end -%>
     <% end -%>
-  <% end -%>
+  </div>
 </div>

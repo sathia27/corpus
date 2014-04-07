@@ -21,13 +21,14 @@ html
           a.navbar-brand = t('project.name')
         .collapse.navbar-collapse
           ul.nav.navbar-nav
-            - if current_user and current_user.admin?
+            - if current_user
               li
                 = link_to t('navbar.home'), "/"
               li
                 = link_to t('navbar.review_words'), review_path
               li
                 = link_to t('navbar.tag_words'), words_path
+            - if current_user and current_user.admin?
               li
                 = link_to t('navbar.words'), admin_words_path
               li

@@ -45,3 +45,20 @@ h3.center{
   text-align: center;
   font-weight: bold;
 }
+.social_login{
+  margin: 20px auto;
+  p{
+    margin-bottom: 15px;
+  }
+  a{
+    padding: 10px;
+    background: #3b5998;
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  a.google_oauth2{
+    background: #d14836;
+  }
+}
