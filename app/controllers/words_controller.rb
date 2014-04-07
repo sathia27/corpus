@@ -21,7 +21,7 @@ class WordsController < ApplicationController
     return render action: 'random' if params[:word].blank? or params[:word][:tag_id].blank?
     params[:word][:tag_created_by] = current_user.id
     @word.update_attributes(params[:word].permit(:tag_id, :tag_created_by))
-    redirect_to root_path
+    redirect_to :back
   end
 
   def review
