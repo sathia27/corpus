@@ -13,3 +13,5 @@
           td = word.name
           td = word.tag.name if word.tag
           td = User.find(word.tag_created_by).email if word.tag_created_by
+
+  = paginate @words
