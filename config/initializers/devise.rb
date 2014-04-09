@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'sorkandu@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -81,11 +81,11 @@ Devise.setup do |config|
   config.skip_session_storage = [:http_auth]
   if Rails.env == 'development'
     config.omniauth :facebook, "120343811381254", "497ec53d7eebc3179464318d6179f23d", {:scope => 'email, offline_access'}
+    config.omniauth :google_oauth2, '41590116774-0agsumdi4d54e59b2u173hkmoi72s4s8.apps.googleusercontent.com', 'FBk92JXJ_ktQEgp7hDeKaPs7'
   elsif Rails.env == 'production'
     config.omniauth :facebook, "733285336705837", "61ffb50315a418096dbd104e27aa74e0", {:scope => 'email, offline_access'}
-    #config.omniauth :google_oauth2, '41590116774.apps.googleusercontent.com', 'FBk92JXJ_ktQEgp7hDeKaPs7'
+    config.omniauth :google_oauth2, '1029976116866.apps.googleusercontent.com', 'gqXoWsL0y4rv-hLeu_TMVBFZ'
   end
-  config.omniauth :google_oauth2, '1029976116866.apps.googleusercontent.com', 'gqXoWsL0y4rv-hLeu_TMVBFZ'
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX

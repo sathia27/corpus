@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
     def self.find_for_oauth(auth)
       record = where(provider: auth.provider, uid: auth.uid.to_s).first
+      puts "!"*10
       if record.blank?
         email = auth.info.email
         unless email.blank?
@@ -17,7 +18,21 @@ class User < ActiveRecord::Base
           end
         end
       end
-      record || create(provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0,20])
+      record || create(provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0,20], name: auth.info.name)
+    end
+    
+    def to_s
+      name.blank? ? email : name
+    end
+    
+    def image
+      if provider and provider.eql?("facebook")
+        "http://graph.facebook.com/" + uid + "/picture"
+      else
+        require 'digest/md5'
+        hash = Digest::MD5.hexdigest(email.downcase)
+        "http://www.gravatar.com/avatar/#{hash}"
+      end
     end
 
     protected
