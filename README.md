@@ -34,7 +34,7 @@
   export CORPUS_DB_PASSWORD=<YOUR MYSQL PASSWORD>
 ```
 
-## Test url
+## Demo
   http://corpus-sathia.rhcloud.com/
 
 ## Contributing
