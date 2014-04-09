@@ -38,13 +38,13 @@
   http://corpus-sathia.rhcloud.com/
 
 ## Contributing
- To keep corpus* improving we need all help we can get. Whether you can contribute code, ideas, translations, bug reports or simply extend the community as a helpful user, your help is welcome!
- Pull requests are always welcome. If you are creating new feature please open an issue before submitting a pull request or mark issue in commit.
-  If you have any query, pleae contact.
-  * Shrinivasan.T tshrinivasan@gmail.com
-  * Sathianarayanan.S sathia2704@gmail.com
-  
 
+You can contribute to this project in different ways:
+
+Report outstanding issues and bugs by creating an Issue
+Suggest feature enhancements also via Issues
+Fork the project, create a branch and file a pull request to improve the code itself
+If you wish to participate contact the team on Mailing list https://lists.sourceforge.net/lists/listinfo/sorkandu-discussions/. So team will guide to move forward
 
 ## License
   This project is licensed under GPL V3
