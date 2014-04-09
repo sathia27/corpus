@@ -1,4 +1,7 @@
 class WordsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:index]
+
   def random
     @word = Word.where("tag_id is NULL").limit(1).order("RAND()").first
     @tags = Tag.all
