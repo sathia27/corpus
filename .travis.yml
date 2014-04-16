@@ -3,6 +3,9 @@ rvm:
 - 2.1.1
 services:
   - mysql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rspec spec/
 before_script:
   - mysql -e 'create database corpus_test;'
 deploy:
