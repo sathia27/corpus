@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.1.1
+deploy:
+  provider: openshift
+  user: sathia2704@gmail.com
+  password:
+    secure: RI2pXnj9n1Jz7kRgGSvCf+4pikai64B5zyO+BXltm35TOc/nYmpRf9oVgsZmwx5oVx9VLAio+oWLVXy13Kpxf+rZADD1AxMcKxRgxu6zwU2WopYAsREYAc5rZuSmIiO7ME/wSWNa77psH3gQ2XkkB9A+geGdGP7FrsL+t5lolZg=
+  app: corpus
+  domain: sathia
+  on:
+    repo: sathia27/corpus
