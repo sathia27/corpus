@@ -7,9 +7,8 @@ gem 'rails', '4.1.0.rc2'
 gem 'mysql2'
 gem 'slim'
 
-group :development, :test do
+group :test do
   gem 'rspec-rails'
-  gem 'debugger'
 end
 gem "carrierwave"
 gem 'kaminari'
@@ -52,5 +51,5 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
