@@ -34,7 +34,8 @@ class WordsController < ApplicationController
   end
 
   def review
-    @word = Word.tagged.limit(1).order("RAND()").first
+    random_number = rand(Word.tagged.count)
+    @word = Word.tagged.limit(1).offset(random_number).first
     @tags = Tag.all
     respond_to do |format|
       format.html { render action: 'review' }
