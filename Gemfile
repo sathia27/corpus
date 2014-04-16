@@ -19,6 +19,7 @@ gem "polyamorous", github: "activerecord-hackery/polyamorous"
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'delayed_job_active_record'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

@@ -3,11 +3,17 @@ class WordsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
 
   def random
-    @word = Word.untagged.limit(1).order("RAND()").first
+    random_number = rand(Word.untagged.count)
+    @word = Word.untagged.limit(1).offset(random_number).first
     @tags = Tag.all
     respond_to do |format|
       format.html { render action: 'random' }
     end
+  end
+  
+  def show
+    @word = Word.find(params[:id])
+    @tags = Tag.all
   end
 
   def index
