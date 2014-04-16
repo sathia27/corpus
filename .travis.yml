@@ -1,6 +1,10 @@
 language: ruby
 rvm:
 - 2.1.1
+services:
+  - mysql
+before_script:
+  - mysql -e 'create database corpus_test;'
 deploy:
   provider: openshift
   user: sathia2704@gmail.com
