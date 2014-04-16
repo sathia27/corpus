@@ -37,6 +37,9 @@
 ## Demo
   http://corpus-sathia.rhcloud.com/
 
+## Travis build
+[![Build Status](https://travis-ci.org/sathia27/corpus.svg?branch=master)](https://travis-ci.org/sathia27/corpus)
+
 ## Contributing
 
 You can contribute to this project in different ways:
