@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408141756) do
+ActiveRecord::Schema.define(version: 20140416051438) do
+
+  create_table "social_connects", force: true do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -29,8 +37,6 @@ ActiveRecord::Schema.define(version: 20140408141756) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "uid"
-    t.string   "provider"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false

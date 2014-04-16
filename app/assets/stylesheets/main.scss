@@ -15,12 +15,15 @@ h3.center{
 .nav-link{
   border: 0;
   padding: 15px;
-  color: #999;
+  color: #000;
   text-decoration: none;
-}
-.nav-link:hover{
-  color: #fff;
-  text-decoration: none;
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  &:hover{
+    color: #000;
+    text-decoration: none;
+  }
 }
 .more-padding{
   padding: 40px 15px;

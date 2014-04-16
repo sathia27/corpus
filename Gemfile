@@ -9,6 +9,7 @@ gem 'slim'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'debugger'
 end
 gem "carrierwave"
 gem 'kaminari'
