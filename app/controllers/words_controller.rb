@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
 
   def random
-    @word = Word.where("tag_id is NULL").limit(1).order("RAND()").first
+    @word = Word.untagged.limit(1).order("RAND()").first
     @tags = Tag.all
     respond_to do |format|
       format.html { render action: 'random' }
@@ -11,7 +11,7 @@ class WordsController < ApplicationController
   end
 
   def index
-    @words = Word.where("tag_id is NOT NULL").page(params[:page]).per(15)
+    @words = Word.tagged.page(params[:page]).per(15)
     respond_to do |format|
       format.json { render :json => @words.to_json }
       format.html { render action: 'index' }
@@ -28,7 +28,7 @@ class WordsController < ApplicationController
   end
 
   def review
-    @word = Word.where("tag_id is NOT NULL").limit(1).order("RAND()").first
+    @word = Word.tagged.limit(1).order("RAND()").first
     @tags = Tag.all
     respond_to do |format|
       format.html { render action: 'review' }
