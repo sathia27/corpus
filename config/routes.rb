@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  
   root 'words#random'
   get '/review' => "words#review"
+  get '/rank' => "home#rank"
   resources :words do
     get :search_name, on: :collection
   end

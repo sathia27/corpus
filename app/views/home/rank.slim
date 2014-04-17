@@ -1,0 +1,12 @@
+div.well
+  ul.list-group
+    li.list-group-item
+      span.badge total words tagged
+      |User
+    - i = 1
+    - @ranks.each do |user, rank|
+      li.list-group-item
+        span.badge = rank
+        |Rank - 
+        = i.to_s + ", " + user
+
