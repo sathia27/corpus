@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def rank
-    grouped_users = Word.includes(:tagged_user).tagged.limit(10).group_by(&:tagged_user).collect { |user,word| { "UID - #{user.id.to_s}, #{user.to_s}" => word.count } if user }
+    grouped_users = Word.includes(:tagged_user).tagged.group_by(&:tagged_user).collect { |user,word| { "UID - #{user.id.to_s}, #{user.to_s}" => word.count } if user }
     @ranks = Hash[*grouped_users.collect{|h| h.to_a}.flatten].sort_by {|k,v| v}.reverse
   end
 end
