@@ -3,7 +3,9 @@ Rails.application.routes.draw do
  
   root 'words#random'
   get '/review' => "words#review"
-  resources :words
+  resources :words do
+    get :search_name, on: :collection
+  end
   namespace :admin do
     resources :words
     resources :users

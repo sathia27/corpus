@@ -22,6 +22,15 @@ class WordsController < ApplicationController
     end
   end
 
+  def search_name
+    @word = Word.where(name: params[:word][:name]).last
+    if @word
+      redirect_to word_path(@word)
+    else
+      redirect_to root_path, :notice => "Could not find ''#{params[:word][:name]}'"
+    end
+  end
+
   def index
     @words = Word.tagged.page(params[:page]).per(15)
     respond_to do |format|

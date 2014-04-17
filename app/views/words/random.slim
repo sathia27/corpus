@@ -1,7 +1,7 @@
 - if @word
   .more-padding
     h3 = t("word.choose_word")
-    = form_for @word_search, :html => {:role => "form"} do |f|
+    = form_for @word_search, :html => {:role => "form", :method => "GET"}, :url => search_name_words_path do |f|
       = f.text_field :name, :class => "form-control", :id => "word_search", :placeholder => "Search for a word", type: "search"
     h3 or
     h2 = @word.name
