@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416102557) do
+ActiveRecord::Schema.define(version: 20140417061423) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20140416102557) do
     t.integer  "tag_created_by"
   end
 
-  add_index "words", ["name"], name: "index_words_on_name", using: :btree
+  add_index "words", ["name"], name: "index_words_on_name", unique: true, using: :btree
   add_index "words", ["tag_created_by"], name: "index_words_on_tag_created_by", using: :btree
   add_index "words", ["tag_id"], name: "index_words_on_tag_id", using: :btree
 

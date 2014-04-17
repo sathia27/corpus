@@ -4,7 +4,9 @@ class Word < ActiveRecord::Base
   
   scope :tagged, -> { where("tag_id IS NOT NULL") }
   scope :untagged, -> { where("tag_id IS NULL") }
-
+  
+  validates_uniqueness_of :name
+  
   def as_json(options={})
     if self.tag
       { name: self.name, tag: self.tag.name }

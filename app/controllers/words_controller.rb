@@ -5,6 +5,7 @@ class WordsController < ApplicationController
   def random
     random_number = rand(Word.untagged.count)
     @word = Word.untagged.limit(1).offset(random_number).first
+    @word_search = Word.new
     @tags = Tag.all
     respond_to do |format|
       format.html { render action: 'random' }
@@ -14,12 +15,22 @@ class WordsController < ApplicationController
   def show
     @word = Word.find(params[:id])
     @tags = Tag.all
+    @word_search = Word.new
+
+    respond_to do |format|
+      format.html { render action: 'random' }
+    end
   end
 
   def index
     @words = Word.tagged.page(params[:page]).per(15)
     respond_to do |format|
-      format.json { render :json => @words.to_json }
+      if params[:search]
+        search = Word.untagged.where("name LIKE '%#{params[:term]}%'").collect{ |word| {id: word.id, label: word.name, value: word.name} }
+        format.json { render :json => search.to_json }
+      else
+        format.json { render :json => @words.to_json }
+      end
       format.html { render action: 'index' }
     end
   end
@@ -30,7 +41,7 @@ class WordsController < ApplicationController
     return render action: 'random' if params[:word].blank? or params[:word][:tag_id].blank?
     params[:word][:tag_created_by] = current_user.id
     @word.update_attributes(params[:word].permit(:tag_id, :tag_created_by))
-    redirect_to :back
+    redirect_to root_path
   end
 
   def review

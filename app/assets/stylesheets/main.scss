@@ -75,3 +75,19 @@ h3.center{
 h3.word_heading span.badge{
   margin-left: 10px;
 }
+ul.ui-autocomplete{
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  background: #F8F8F8;
+  border-radius: 1px solid #ccc;
+  border-shadow: 3px 3px 3px 2px #ccc;
+  li{
+    color: #000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+}

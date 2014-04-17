@@ -7,8 +7,7 @@ class WordParser
   def parse_and_save
     words = File.open(Rails.root.to_s + "/public" +  @word_document.word_list_file.url).readlines
     words.each do |word|
-      word_exists = Word.where(name: word.strip).last
-      Word.create(name: word.strip, user_id: @word_document.user_id) unless word_exists
+      puts Word.create(name: word.strip, user_id: @word_document.user_id)
     end
     @word_document.update_attributes(:processed => true)
   end
