@@ -10,7 +10,7 @@
         th Tagged by
     tbody
       - @words.each do |word|
-        - user = word.tag_created_by ? User.where(:id => word.tag_created_by).last : nil
+        - user = word.tagged_user ? word.tagged_user : nil
         tr
           td = word.name
           td = word.tag.name if word.tag

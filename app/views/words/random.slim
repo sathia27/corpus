@@ -10,8 +10,8 @@
       - @tags.each do |tag|
         div.radio
           label
-           = f.radio_button :tag_id, tag.id
-           = tag.name
+           = f.radio_button :tag_id, tag[0]
+           = tag[1]
       hr
       div.center-aligned
         = link_to "Skip", root_path, :class => "btn btn-danger"

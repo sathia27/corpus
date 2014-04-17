@@ -7,11 +7,15 @@
       - @tags.each do |tag|
         div.radio
           label
-           = f.radio_button :tag_id, tag.id
-           = tag.name
+           = f.radio_button :tag_id, tag[0]
+           = tag[1]
       hr
       div.center-aligned
         = link_to "Skip", review_path, :class => "btn btn-danger"
         = f.submit "Save", :class => "btn btn-success"
+    - if @word.tagged_user and @word.tagged_user.name
+      p.right_align
+        |Tagged by 
+        span = @word.tagged_user.name
 - else
   p.bg-info.padding15 No more words to review
