@@ -1,3 +1,4 @@
+= javascript_include_tag "https://www.google.com/jsapi"
 - if @word
   .more-padding
     h3 = t("word.choose_word")
@@ -21,3 +22,20 @@
     |All words are tagged by users. If you want to review words. click 
     a href="/review" Review
 
+javascript:
+    google.load("elements", "1", {
+        packages: "transliteration"
+    });
+
+    function onLoad() {
+        var options = {
+            sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage: [google.elements.transliteration.LanguageCode.TAMIL],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        var control = new google.elements.transliteration.TransliterationControl(options);
+        control.makeTransliteratable(['word_search']);
+    }
+    google.setOnLoadCallback(onLoad);
