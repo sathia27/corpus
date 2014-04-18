@@ -10,7 +10,7 @@ html
     meta name="keywords" content="tamil,corpus,sorkandu,parts of speech,word classes,tamil words,word list"
     == stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     == javascript_include_tag "application", 'data-turbolinks-track' => true 
-    == javascript_include_tag "//code.jquery.com/ui/1.10.4/jquery-ui.js"
+    = javascript_include_tag "https://www.google.com/jsapi"
     == csrf_meta_tags
 
   body
@@ -60,4 +60,20 @@ html
           p = notice
           p = alert
       == yield
+      javascript:
+        google.load("elements", "1", {
+            packages: "transliteration"
+        });
 
+        function onLoad() {
+            var options = {
+                sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
+                destinationLanguage: [google.elements.transliteration.LanguageCode.TAMIL],
+                shortcutKey: 'ctrl+g',
+                transliterationEnabled: true
+            };
+
+            var control = new google.elements.transliteration.TransliterationControl(options);
+            control.makeTransliteratable(['word_search_tr']);
+        }
+        google.setOnLoadCallback(onLoad);

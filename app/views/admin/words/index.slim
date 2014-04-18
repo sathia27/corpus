@@ -1,7 +1,7 @@
 h3 Word list
 
 = search_form_for @q, :url => admin_words_path do |f|
-  = f.text_field :name_cont, :class => "form-control", :placeholder => "Search a name"
+  = f.text_field :name_cont, :class => "form-control", :placeholder => "Search a name", :id => "word_search_tr"
 
 table.table.table-striped
   thead

@@ -1,9 +1,8 @@
-= javascript_include_tag "https://www.google.com/jsapi"
 - if @word
   .more-padding
     h3 = t("word.choose_word")
     = form_for @word_search, :html => {:role => "form", :method => "GET"}, :url => search_name_words_path do |f|
-      = f.text_field :name, :class => "form-control", :id => "word_search", :placeholder => "Search for a word", type: "search"
+      = f.text_field :name, :class => "form-control", :id => "word_search_tr", :placeholder => "Search for a word", type: "search"
     h3 or
     h2 = @word.name
     hr
@@ -21,21 +20,3 @@
   p.bg-info.padding15
     |All words are tagged by users. If you want to review words. click 
     a href="/review" Review
-
-javascript:
-    google.load("elements", "1", {
-        packages: "transliteration"
-    });
-
-    function onLoad() {
-        var options = {
-            sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
-            destinationLanguage: [google.elements.transliteration.LanguageCode.TAMIL],
-            shortcutKey: 'ctrl+g',
-            transliterationEnabled: true
-        };
-
-        var control = new google.elements.transliteration.TransliterationControl(options);
-        control.makeTransliteratable(['word_search']);
-    }
-    google.setOnLoadCallback(onLoad);
