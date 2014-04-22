@@ -11,18 +11,18 @@ en:
       inactive: "உங்கள் கணக்கு இன்னும் செயல்பாட்டுக்கு வரவில்லை."
       invalid: "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்."
       locked: "உங்கள் கணக்கு பூட்டப்பட்டுள்ளது."
-      last_attempt: "You have one more attempt before your account will be locked."
+      last_attempt: "உங்கள் கணக்கை பூடப்படுவதற்க்கு இன்னும் ஒரு முயற்சி மீதமுள்ளது."
       not_found_in_database: "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்"
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      timeout: "உங்கள் அமர்வு காலாவதியானது. தொடர்ந்து மீண்டும் உள்நுழைக."
+      unauthenticated: "தொடருவதற்கு முன் நீங்கள் உள்நுழைய அல்லது பதிவு செய்ய வேண்டும்."
+      unconfirmed: "தொடர்வதற்கு முன், உங்கள் கணக்கை உறுதிப்படுத்த வேண்டும்."
     mailer:
       confirmation_instructions:
         subject: "உறுதிப்படுத்துதளுக்கான வழிமுறைகள்"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "கடவுச்சொல்லை மீட்டமைக்க வழிமுறைகள் "
       unlock_instructions:
-        subject: "Unlock Instructions"
+        subject: "திறப்பதற்காண வழிமுறைகள்"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -30,30 +30,30 @@ en:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
+      updated: "உங்கள் கடவுச்சொல் வெற்றிகரமாக மாற்றப்பட்டது. நீங்கள் உள்நுழைந்துள்ளீர்கள்."
+      updated_not_active: "உங்கள் கடவுச்சொல் வெற்றிகரமாக மாற்றப்பட்டது."
     registrations:
       destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      signed_up: "வரவேற்கிறோம்! நீங்கள் வெற்றிகரமாக இணைந்துவிட்டீர்கள்"
+      signed_up_but_inactive: "நீங்கள் வெற்றிகரமாக இணைந்துவிட்டீர்கள், ஆனாலும் உங்கள் கணக்கு இன்னும் செயலாக்கப்படவில்லை அதனால் நீங்கள் உள்நுழைய முடியவில்லை."
+      signed_up_but_locked: "நீங்கள் வெற்றிகரமாக இணைந்துவிட்டீர்கள். ஆனாலும் உங்கள் கணக்கு பூட்டப்பட்டுள்ளது அதனால் நீங்கள் உள்நுழைய முடியவில்லை."
+      signed_up_but_unconfirmed: "ஒரு உறுதிப்படுத்தல் இணைப்பும் ஒரு செய்தியும் உங்கள் மின்னஞ்சல் முகவரிக்கு அனுப்பப்படும். உங்கள் கணக்கு செயல்படுத்த இணைப்பை திறக்கவும்."
+      update_needs_confirmation: "உங்கள் கணக்கு வெற்றிகரமாக மேம்படுத்தப்பட்டுவிட்டது, ஆனாலும் உங்கள் மின்னஞ்சல் முகவரியை சரி பார்க்க வேண்டியுள்ளது.  உங்கள் மின்னஞ்சல் முகவரிக்கு அனுப்பப்பட்டுள்ள இணைப்பை செயல்படுத்தி கணக்கை துவக்கவும்."
       updated: "You updated your account successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "வெற்றிகரமாக உள் நுழைந்துவிட்டீர்கள்"
+      signed_out: "வெற்றிகரமாக வெளியேறிவிட்டீர்கள்."
     unlocks:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
+      already_confirmed: "ஏற்க்கனவே உறுதிப்படுத்தப்பட்டது. மீண்டும் முயற்சிக்கவும்"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      expired: " காலவாதியாகிவிட்டது, புதிதாக ஒன்றை வேண்டவும்"
+      not_found: "காணப்படவில்லை"
+      not_locked: "பூட்டப்படவில்லை"
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
