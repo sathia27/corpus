@@ -13,9 +13,6 @@
       div.center-aligned
         = link_to "Skip", review_path, :class => "btn btn-danger"
         = f.submit "Save", :class => "btn btn-success"
-    - if @word.tagged_user and @word.tagged_user.name
-      p.right_align
-        |Tagged by 
-        span = @word.tagged_user.name
+		== render :partial=>'shared/disqus.slim'
 - else
   p.bg-info.padding15 No more words to review
