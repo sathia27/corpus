@@ -46,7 +46,8 @@ class WordsController < ApplicationController
 
   def update
     @word = Word.find(params[:id])
-    @tags = Tag.all
+    @tags = Tag.pluck(:id, :name)
+    @word_search = Word.new
     return render action: 'random' if params[:word].blank? or params[:word][:tag_id].blank?
     params[:word][:tag_created_by] = current_user.id
     @word.update_attributes(params[:word].permit(:tag_id, :tag_created_by))
