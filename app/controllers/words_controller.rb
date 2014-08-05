@@ -4,14 +4,24 @@ class WordsController < ApplicationController
 
   def random
     random_number = rand(Word.untagged.count)
-    @word = Word.untagged.limit(1).offset(random_number).first
+    @words = Word.untagged.limit(50).offset(random_number).all
     @word_search = Word.new
-    @tags = Tag.pluck(:id, :name)
+    @tags = Tag.pluck(:name, :id)
     respond_to do |format|
       format.html { render action: 'random' }
     end
   end
-  
+
+  def saveall
+    word_list = params[:word_list][:word_list].values
+    tagged_word_list = word_list.select { |word| !word[:tag_id].blank? }
+    tagged_word_list.each do |word|
+      w = Word.find(word[:word_id])
+      puts w.update_attributes({:tag_id => word[:tag_id].to_i, :tag_created_by => current_user.id})
+    end
+    redirect_to root_path, :notice => "You have successfully tagged #{tagged_word_list.count} words"
+  end
+
   def show
     @word = Word.find(params[:id])
     @tags = Tag.pluck(:id, :name)

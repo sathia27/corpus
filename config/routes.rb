@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/rank' => "home#rank"
   resources :words do
     get :search_name, on: :collection
+    post :saveall, on: :collection
   end
   namespace :admin do
     resources :words
